@@ -1,4 +1,4 @@
-//1)
+//1) Código Simples
 
 #include <stdio.h>
 
