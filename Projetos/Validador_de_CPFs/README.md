@@ -4,9 +4,9 @@
 
 1) No link a seguir você encontra a explicação do algoritmo usado pela Receita Federal para validação de um CPF:    
 https://dicasdeprogramacao.com.br/algoritmo-para-validar-cpf/    
+Estude-o e monte uma planilha em Excel ou Calc para implementar a ideia.    
 
-2) No link "base" ao lado, há um código em C que valida o primeiro dígito verificador. Faça um código que valide também o segundo dígito verificador.     
-Você pode fazer um CTRL+C e CTRL+V com atenção, visto que o algoritmo para o segundo dígito é muito parecido com o do primeiro.    
+2) Faça um código em C que valide o primeiro e o segundo dígito verificador.    
     
 3) Agora crie uma função que verifique um dígito qualquer (perceba a semelhança na verificação de cada um dos dígitos) e altere o código.    
 
