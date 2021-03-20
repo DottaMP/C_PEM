@@ -12,7 +12,7 @@ Estude-o e monte uma planilha em Excel ou Calc para implementar a ideia.
 
 4) Agora vamos melhorar mais ainda o código do validador de CPFs com função acrescentando a checagem de todos dígitos repetidos, pois CPFs como 333.333.333-33 e 444.444.444-44 passam na verificação dos dígitos mas não são considerados válidos. Escreva uma função que descubra se o vetor tem ou não todos os elementos repetidos.    
 
-5) Vamos melhorar mais ainda o código cpf3.c acrescentando agora um procedimento (uma função que nada retorna) para informar (imprimir na tela) o estado de origem do CPF, com base no seu nono dígito (ou seu ante-penúltimo dígito):    
+5) Vamos melhorar mais ainda acrescentando agora um procedimento (uma função que nada retorna) para informar (imprimir na tela) o estado de origem do CPF, com base no seu nono dígito (ou seu ante-penúltimo dígito):    
 
     * 0 Rio Grande do Sul    
     * 1 Distrito Federal, Goiás, Mato Grosso, Mato Grosso do Sul e Tocantins    
@@ -26,7 +26,7 @@ Estude-o e monte uma planilha em Excel ou Calc para implementar a ideia.
     * 9 Paraná e Santa Catarina    
 (Essa informação está no site: http://verificador.blogspot.com.br/p/cpf-validacao.html)    
     
-6) Vamos melhorar mais ainda o código cpf4.c trabalhando na nova entrada dos dígitos do CPF. Vamos lê-los com uma string e processá-la adequadamente. Usando o conhecimento de que cada caractere é representado internamente por um número que corresponde ao seu código ASCII ( https://pt.wikipedia.org/wiki/ASCII ), podemos convertê-lo facilmente para o correspondente numérico:    
+6) Vamos trabalhar na nova entrada dos dígitos do CPF. Vamos lê-los com uma string e processá-la adequadamente. Usando o conhecimento de que cada caractere é representado internamente por um número que corresponde ao seu código ASCII ( https://pt.wikipedia.org/wiki/ASCII ), podemos convertê-lo facilmente para o correspondente numérico:    
 
 | Código ASCII | Caractere| Correspondente (número) |
 |----------|------|-----|
@@ -42,5 +42,6 @@ Estude-o e monte uma planilha em Excel ou Calc para implementar a ideia.
 | 57 | '9' | 9 |
     
 Todo outro caractere presente na digitação deve ser ignorado, como '.' (ponto), '-' (hífen) e ' ' (espaço).
-Último detalhe: o CPF pode ter menos de 11 dígitos e ainda ser válido. Assim, este procedimento deverá deixar zeros à esquerda para completar os 11 dígitos; caso contrário, o algoritmo de validação falhará.    
+
+7) No último detalhe: Vamor melhorar o método get, utilizando o fgtes, e fazer uma função para converter a entrada dos dígitos, pois o CPF pode ter menos de 11 dígitos e ainda ser válido. Assim, este procedimento deverá deixar zeros à esquerda para completar os 11 dígitos, caso contrário, o algoritmo de validação falhará.    
 

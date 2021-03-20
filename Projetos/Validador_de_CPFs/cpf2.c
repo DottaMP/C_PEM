@@ -1,7 +1,6 @@
 //Código Simples
 
 #include <stdio.h>
-
 int main(int argc, char *argv[]){
 	int cpf[11];
 	int m1[9]={10,9,8,7,6,5,4,3,2};
