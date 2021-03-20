@@ -1,6 +1,5 @@
-//2) Função
-
-#include <stdio.h>
+//Função verifica digito
+#include<stdio.h>
 
 int calculaDigito(int cpf[], int mult[], int n){
     int soma=0, i;

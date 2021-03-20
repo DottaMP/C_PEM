@@ -1,4 +1,4 @@
-//1) Código Simples
+//Código Simples
 
 #include <stdio.h>
 
