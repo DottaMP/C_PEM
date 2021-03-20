@@ -3,7 +3,6 @@
 #include<stdio.h>
 #include<stdbool.h>
 #include<string.h>
-
 bool verificadorDigitosIguais(int cnpj[])
 {   int i;
     for(i=0; i<13; i++)
