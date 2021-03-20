@@ -38,7 +38,6 @@ int main(int argc, char *argv[]){
 	else{
 		printf("\nErro no segundo verificador.");
 	}
-    
     return 0;
 }
 
