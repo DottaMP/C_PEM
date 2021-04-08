@@ -28,7 +28,7 @@ void mostraMatriz(int l, int c, int mat[l][c]){
     printf("\nMatriz Informada:\n");
 	for(int i=0; i<l; i++)
 	{	for(int j=0; j<c; j++){	
-	        printf( "%i\t", mat[i][j]);
+	        	printf( "%i\t", mat[i][j]);
 		}
 		printf( "\n");
 	}
@@ -40,9 +40,9 @@ void mostraDiagonalPrincipal(int l, int c, int mat[l][c]){
     printf("\nValores da Diagonal Principal:\n");
 	for(int i=0; i<l; i++)
 	{	for(int j=0; j<c; j++){	
-	        if(i==j){
-	            printf( "%i\t", mat[i][j]);
-	        }
+	        	if(i==j){
+	            		printf( "%i\t", mat[i][j]);
+	        	}
 		}
 	}
 }
@@ -53,9 +53,9 @@ void mostraDiagonalSecundaria(int l, int c, int mat[l][c]){
     printf("\nValores da Diagonal Principal:\n");
 	for(int i=0; i<l; i++)
 	{	for(int j=0; j<c; j++){	
-	        if(j==c-i-1){
-	            printf( "%i\t", mat[i][j]);
-	        }
+	        	if(j==c-i-1){
+	            		printf( "%i\t", mat[i][j]);
+	        	}
 		}
 	}
 }
@@ -66,9 +66,9 @@ void mostraAcimaDiagonalPrincipal(int l, int c, int mat[l][c]){
     printf("\nValores da Diagonal Principal:\n");
 	for(int i=0; i<l; i++)
 	{	for(int j=0; j<c; j++){	
-	        if(j>i){
-	            printf( "%i\t", mat[i][j]);
-	        }
+	        	if(j>i){
+	            		printf( "%i\t", mat[i][j]);
+	        	}
 		}
 	}
 }
@@ -79,9 +79,9 @@ void mostraAbaixoDiagonalPrincipal(int l, int c, int mat[l][c]){
     printf("\nValores da Diagonal Principal:\n");
 	for(int i=0; i<l; i++)
 	{	for(int j=0; j<c; j++){	
-	        if(j<i){
-	            printf( "%i\t", mat[i][j]);
-	        }
+	        	if(j<i){
+	            		printf( "%i\t", mat[i][j]);
+	        	}
 		}
 	}
 }
@@ -92,9 +92,9 @@ void mostraAcimaDiagonalSecundaria(int l, int c, int mat[l][c]){
     printf("\nValores da Diagonal Principal:\n");
 	for(int i=0; i<l; i++)
 	{	for(int j=0; j<c; j++){	
-	        if(j<=c-i-2){
-	            printf( "%i\t", mat[i][j]);
-	        }
+	        	if(j<=c-i-2){
+	            		printf( "%i\t", mat[i][j]);
+	        	}
 		}
 	}
 }
@@ -105,9 +105,9 @@ void mostraAbaixoDiagonalSecundaria(int l, int c, int mat[l][c]){
     printf("\nValores da Diagonal Principal:\n");
 	for(int i=0; i<l; i++)
 	{	for(int j=0; j<c; j++){	
-	        if(j>=c-i){
-	            printf( "%i\t", mat[i][j]);
-	        }
+	        	if(j>=c-i){
+	            		printf( "%i\t", mat[i][j]);
+	        	}
 		}
 	}
 }
