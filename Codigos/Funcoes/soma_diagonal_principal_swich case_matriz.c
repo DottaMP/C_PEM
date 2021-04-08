@@ -44,9 +44,9 @@ int somaDiagonal(int l, int c, int mat[l][c]){
 	case 1 : // Soma dos elementos da diagonal principal
 	    for(i=0; i < l; i++){
 		    for (j=0; j < c; j++){
-	            if(i==j){
+	            	if(i==j){
 		            soma = soma + mat[i][j];
-	            }
+	            	}
 		    }
 	    }
 	    return soma;
@@ -54,9 +54,9 @@ int somaDiagonal(int l, int c, int mat[l][c]){
 	case 2 : // Soma dos elementos da diagonal secundária
 	    for(i=0; i < l; i++){
 		    for (j=0; j < c; j++){
-	            if(j==c-i-1){
+	           	 if(j==c-i-1){
 		            soma = soma + mat[i][j];
-	            }
+	            	}
 		    }
 	    }
 	    return soma;
@@ -64,9 +64,9 @@ int somaDiagonal(int l, int c, int mat[l][c]){
 	case 3 : // Soma dos elementos acima da diagonal principal
 	    for(i=0; i < l; i++){
 		    for (j=0; j < c; j++){
-	            if(j>i){
+	           	 if(j>i){
 		            soma = soma + mat[i][j];
-	            }
+	            	}
 		    }
 	    }
 	    return soma;
@@ -74,9 +74,9 @@ int somaDiagonal(int l, int c, int mat[l][c]){
 	case 4 : // Soma dos elementos abaixo da diagonal principal
 	    for(i=0; i < l; i++){
 		    for (j=0; j < c; j++){
-	            if(j<i){
+	            	if(j<i){
 		            soma = soma + mat[i][j];
-	            }
+	            	}
 		    }
 	    }
 	    return soma;
@@ -84,9 +84,9 @@ int somaDiagonal(int l, int c, int mat[l][c]){
 	case 5 : // Soma dos elementos acima da diagonal secundária
 	    for(i=0; i < l; i++){
 		    for (j=0; j < c; j++){
-	            if(j<=c-i-2){
+	            	if(j<=c-i-2){
 		            soma = soma + mat[i][j];
-	            }
+	            	}
 		    }
 	    }
 	    return soma;
@@ -94,9 +94,9 @@ int somaDiagonal(int l, int c, int mat[l][c]){
 	case 6 : // Soma dos elementos abaixo da diagonal secundária
 	    for(i=0; i < l; i++){
 		    for (j=0; j < c; j++){
-	            if(j>=c-i){
+	            	if(j>=c-i){
 		            soma = soma + mat[i][j];
-	            }
+	            	}
 		    }
 	    }
 	    return soma;
