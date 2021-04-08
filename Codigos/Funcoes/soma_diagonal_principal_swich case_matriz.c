@@ -8,7 +8,6 @@ Exemplo de matriz 3x3:  5 9 6
                     4. Abaixo da Diagonal Principal: 2 - 8 - 7 = Soma 17
                     5. Acima da Diagonal Secundaria: 5 - 9 - 2 = Soma 16
                     6. Abaixo da Diagonal Secundaria: 3 - 7 - 4 = Soma 14
-
 Exemplo de matriz 4x4:  5 9 6 1
                         2 1 3 2
                         8 7 4 3
@@ -22,6 +21,97 @@ Exemplo de matriz 4x4:  5 9 6 1
 */
 
 #include <stdio.h>
+
+//Função Mostra Matriz 
+void mostraMatriz(int l, int c, int mat[l][c]){	
+    
+    printf("\nMatriz Informada:\n");
+	for(int i=0; i<l; i++)
+	{	for(int j=0; j<c; j++){	
+	        printf( "%i\t", mat[i][j]);
+		}
+		printf( "\n");
+	}
+}
+
+//Função Mostra Diagonal Principal 
+void mostraDiagonalPrincipal(int l, int c, int mat[l][c]){	
+    
+    printf("\nValores da Diagonal Principal:\n");
+	for(int i=0; i<l; i++)
+	{	for(int j=0; j<c; j++){	
+	        if(i==j){
+	            printf( "%i\t", mat[i][j]);
+	        }
+		}
+	}
+}
+
+//Função Mostra Diagonal Secundária 
+void mostraDiagonalSecundaria(int l, int c, int mat[l][c]){	
+    
+    printf("\nValores da Diagonal Principal:\n");
+	for(int i=0; i<l; i++)
+	{	for(int j=0; j<c; j++){	
+	        if(j==c-i-1){
+	            printf( "%i\t", mat[i][j]);
+	        }
+		}
+	}
+}
+
+//Função Mostra Acima Diagonal Principal 
+void mostraAcimaDiagonalPrincipal(int l, int c, int mat[l][c]){	
+    
+    printf("\nValores da Diagonal Principal:\n");
+	for(int i=0; i<l; i++)
+	{	for(int j=0; j<c; j++){	
+	        if(j>i){
+	            printf( "%i\t", mat[i][j]);
+	        }
+		}
+	}
+}
+
+//Função Mostra Abaixo Diagonal Principal 
+void mostraAbaixoDiagonalPrincipal(int l, int c, int mat[l][c]){	
+    
+    printf("\nValores da Diagonal Principal:\n");
+	for(int i=0; i<l; i++)
+	{	for(int j=0; j<c; j++){	
+	        if(j<i){
+	            printf( "%i\t", mat[i][j]);
+	        }
+		}
+	}
+}
+
+//Função Mostra Acima Diagonal Secundaria 
+void mostraAcimaDiagonalSecundaria(int l, int c, int mat[l][c]){	
+    
+    printf("\nValores da Diagonal Principal:\n");
+	for(int i=0; i<l; i++)
+	{	for(int j=0; j<c; j++){	
+	        if(j<=c-i-2){
+	            printf( "%i\t", mat[i][j]);
+	        }
+		}
+	}
+}
+
+//Função Mostra Abaixo Diagonal Secundaria 
+void mostraAbaixoDiagonalSecundaria(int l, int c, int mat[l][c]){	
+    
+    printf("\nValores da Diagonal Principal:\n");
+	for(int i=0; i<l; i++)
+	{	for(int j=0; j<c; j++){	
+	        if(j>=c-i){
+	            printf( "%i\t", mat[i][j]);
+	        }
+		}
+	}
+}
+
 
 //Função para somar aos valores:
 int somaDiagonal(int l, int c, int mat[l][c]){
@@ -42,61 +132,67 @@ int somaDiagonal(int l, int c, int mat[l][c]){
     switch (opcao){
         
 	case 1 : // Soma dos elementos da diagonal principal
+	    mostraDiagonalPrincipal(l, c, mat);
 	    for(i=0; i < l; i++){
 		    for (j=0; j < c; j++){
-	            if(i==j){
+	            	if(i==j){
 		            soma = soma + mat[i][j];
-	            }
+	            	}
 		    }
 	    }
 	    return soma;
 
 	case 2 : // Soma dos elementos da diagonal secundária
+	    mostraDiagonalSecundaria(l, c, mat);
 	    for(i=0; i < l; i++){
 		    for (j=0; j < c; j++){
-	            if(j==c-i-1){
+	           	 if(j==c-i-1){
 		            soma = soma + mat[i][j];
-	            }
+	            	}
 		    }
 	    }
 	    return soma;
 
 	case 3 : // Soma dos elementos acima da diagonal principal
+	    mostraAcimaDiagonalPrincipal(l, c, mat);
 	    for(i=0; i < l; i++){
 		    for (j=0; j < c; j++){
-	            if(j>i){
+	           	 if(j>i){
 		            soma = soma + mat[i][j];
-	            }
+	            	}
 		    }
 	    }
 	    return soma;
 
 	case 4 : // Soma dos elementos abaixo da diagonal principal
+	    mostraAbaixoDiagonalPrincipal(l, c, mat);
 	    for(i=0; i < l; i++){
 		    for (j=0; j < c; j++){
-	            if(j<i){
+	            	if(j<i){
 		            soma = soma + mat[i][j];
-	            }
+	            	}
 		    }
 	    }
 	    return soma;
 	    
 	case 5 : // Soma dos elementos acima da diagonal secundária
+	    mostraAcimaDiagonalSecundaria(l, c, mat);
 	    for(i=0; i < l; i++){
 		    for (j=0; j < c; j++){
-	            if(j<=c-i-2){
+	            	if(j<=c-i-2){
 		            soma = soma + mat[i][j];
-	            }
+	            	}
 		    }
 	    }
 	    return soma;
 	    
 	case 6 : // Soma dos elementos abaixo da diagonal secundária
+    	mostraAbaixoDiagonalSecundaria(l, c, mat);
 	    for(i=0; i < l; i++){
 		    for (j=0; j < c; j++){
-	            if(j>=c-i){
+	            	if(j>=c-i){
 		            soma = soma + mat[i][j];
-	            }
+	            	}
 		    }
 	    }
 	    return soma;
@@ -118,7 +214,9 @@ int main(int argc, char *argv[]){
         
     }
     
-	printf("\nSoma: %i",somaDiagonal(l, c, mat));
+    mostraMatriz(l, c, mat); //função mostraMatriz
+
+	printf("\n\nSoma: %i\n",somaDiagonal(l, c, mat)); //função soma Diagonal
 	
     return 0;
 }
