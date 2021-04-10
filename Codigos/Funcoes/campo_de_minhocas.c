@@ -43,7 +43,7 @@ int somaLinha(int l, int c, int mat[l][c], int linha){
 }
 
 //Função para somar as colunas
-int somaLColuna(int l, int c, int mat[l][c], int coluna){
+int somaColuna(int l, int c, int mat[l][c], int coluna){
 
     int i, soma=0;
     for(int i=0; i<l; i++){ //variação de linha apenas
@@ -72,8 +72,14 @@ int main(int argc, char *argv[]){
 	        maior=soma;
 	    }
 	}
+	for(j=0; j<c; j++){
+	    int soma = somaColuna(l, c, mat, j);
+	    if(soma>maior){
+	        maior=soma;
+	    }
+	}
 	        
-	printf("%i", maior);    
+	printf("\n%i", maior);    
 	
     return 0;
 }
