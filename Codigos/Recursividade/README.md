@@ -56,27 +56,30 @@ fatorial(4) = 4*6      <----    6
 
 
 
-Uma implementação cheia de printfs para ajudar o entendimento:
+#### Uma implementação cheia de printfs para ajudar o entendimento:    
 
-#include <stdio.h>
-int fatorial (int N)
-{   if(N==0)
-    {   printf("Cheguei finalmente na base... 0! = 1\n");
-        return 1;
-    }
-    else
-    {   printf("Para calcular o fatorial de %d preciso calcular o de %d\n",
-            N, N-1);
-        int aux = fatorial (N-1);
-        printf("Calculei o fatorial de %d que dá %d\n", N-1, aux);
-        return N * aux;
-    }
-}
+`` json    
 
-int main()
-{   int x;
-    printf("Entre com um número:");
-    scanf("%d", &x);
-    printf("O fatorial de %d é %d\n", x, fatorial(x));
-    return 0;
+#include <stdio.h>    
+int fatorial (int N)    
+{   if(N==0)    
+    {   printf("Cheguei finalmente na base... 0! = 1\n");    
+        return 1;    
+    }    
+    else    
+    {   printf("Para calcular o fatorial de %d preciso calcular o de %d\n",    
+            N, N-1);    
+        int aux = fatorial (N-1);    
+        printf("Calculei o fatorial de %d que dá %d\n", N-1, aux);    
+        return N * aux;    
+    }    
 }
+<br>
+int main()    
+{   int x;    
+    printf("Entre com um número:");    
+    scanf("%d", &x);    
+    printf("O fatorial de %d é %d\n", x, fatorial(x));    
+    return 0;    
+}    
+`` json  
