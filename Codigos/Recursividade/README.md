@@ -27,7 +27,9 @@
 
 	0! = 1
 
-      Ao programarmos um algoritmo recursivo precisamos tomar um cuidado: testarmos a base da recursão antes de fazermos a chamada recursiva, para evitarmos a criação de um laço infinito. Vejamos como isso se aplica na implementação da função fatorial:
+      Ao programarmos um algoritmo recursivo precisamos tomar um cuidado: testarmos a base da recursão 
+      antes de fazermos a chamada recursiva, para evitarmos a criação de um laço infinito. Vejamos como 
+      isso se aplica na implementação da função fatorial:
 
       int fatorial (int N)
       { 
