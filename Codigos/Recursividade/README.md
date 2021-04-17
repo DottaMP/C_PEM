@@ -16,8 +16,13 @@
 
 	N! = N * (N-1)!
 
-      Percebem como uso a solução do próprio fatorial em versão menor (fatorial de N-1) para o cálculo do problema original (fatorial de N)?    
-      Mas este raciocínio tem de parar em algum momento, pois senão seria uma repetição infinita: para calcular o fatorial do 2 precisaria do fatorial do 1, para calcular o fatorial do 1 precisaria do fatorial do 0, para calcular o fatorial do 0 precisaria do fatorial do -1, e do fatorial do -2, -3, -4, ... Este ponto de parada é chamado de base da recursão; consiste na versão mais simples possível do problema, cuja solução é óbvia.
+      Percebem como uso a solução do próprio fatorial em versão menor (fatorial de N-1) 
+      para o cálculo do problema original (fatorial de N)?    
+      Mas este raciocínio tem de parar em algum momento, pois senão seria uma repetição 
+      infinita: para calcular o fatorial do 2 precisaria do fatorial do 1, para calcular 
+      o fatorial do 1 precisaria do fatorial do 0, para calcular o fatorial do 0 precisaria 
+      do fatorial do -1, e do fatorial do -2, -3, -4, ... Este ponto de parada é chamado 
+      de base da recursão; consiste na versão mais simples possível do problema, cuja solução é óbvia.
       Para o problema do fatorial, a base é o fatorial de 0, que é definido como valendo 1:
 
 	0! = 1
