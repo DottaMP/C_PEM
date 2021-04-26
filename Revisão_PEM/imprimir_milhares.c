@@ -15,7 +15,7 @@ int main(int argc, char *argv[]){
     
     for(i=1000; i<=9999; i++){
         dezena1 = i / 100;
-        dezena2 = i % 2;
+        dezena2 = i % 100;
         raiz = (dezena1+dezena2);
         
         if((raiz*raiz)==i){
