@@ -20,7 +20,7 @@ int main(int argc, char *argv[]){
         
         if((raiz*raiz)==i){
             
-            printf("%i", i);
+            printf("%i\n", i);
         }
     }
     
