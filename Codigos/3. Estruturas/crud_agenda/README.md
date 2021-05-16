@@ -1,6 +1,6 @@
 # Crud - Agenda Amigos
 
-## Todos estes exercícios a seguir têm por base o código-base, que é um mini CRUD (Create-Read-Update-Delete, ou Criar-Ler-Atualizar-Remover).    
+### Todos estes exercícios a seguir têm por base o código-base, que é um mini CRUD (Create-Read-Update-Delete, ou Criar-Ler-Atualizar-Remover).    
     
 #### 1) Inclua novos campos, como endereço, e-mail, data de nascimento, etc.    
     
@@ -39,48 +39,48 @@ int procurar(char procurado[], struct ficha vetor[], int num_fichas)
 
 Com o main....
 
-#include <stdio.h>
-int busca(int vet[ ], int N, int indiceInicio, int procurado)
-{	int i;
-	for(i=indiceInicio; i < N; i++)
-	{	if(procurado == vet[i])
-		{	return i;
+	#include <stdio.h>
+	int busca(int vet[ ], int N, int indiceInicio, int procurado)
+	{	int i;
+		for(i=indiceInicio; i < N; i++)
+		{	if(procurado == vet[i])
+			{	return i;
+			}
 		}
+		return -1;
 	}
-	return -1;
-}
 
-int buscaRecursiva(int vet[ ], int N, int indiceInicio, int procurado)
-{	if(indiceInicio >= N) return -1;		//não existe no vetor
-	if(vet[ indiceInicio ] == procurado) return indiceInicio;	//achei!!!
-	return buscaRecursiva(vet, N, indiceInicio+1, procurado);
-}
+	int buscaRecursiva(int vet[ ], int N, int indiceInicio, int procurado)
+	{	if(indiceInicio >= N) return -1;		//não existe no vetor
+		if(vet[ indiceInicio ] == procurado) return indiceInicio;	//achei!!!
+		return buscaRecursiva(vet, N, indiceInicio+1, procurado);
+	}
 
-int main()
-{   int vet[] = {4, 8, 1, 7, 3, 12, 34, 97, -1, 2};
-    printf("Procurando o elemento 12 (iterativa) => %d\n", 
-        busca(vet, 10, 0, 12));
-    printf("Procurando o elemento 72 (iterativa) => %d\n", 
-        busca(vet, 10, 0, 72));
-    printf("Procurando o elemento 12 (recursiva) => %d\n", 
-        buscaRecursiva(vet, 10, 0, 12));
-    printf("Procurando o elemento 72 (recursiva) => %d\n", 
-        buscaRecursiva(vet, 10, 0, 72));
-    return 0;
-}
+	int main()
+	{   int vet[] = {4, 8, 1, 7, 3, 12, 34, 97, -1, 2};
+    	printf("Procurando o elemento 12 (iterativa) => %d\n", 
+        	busca(vet, 10, 0, 12));
+    	printf("Procurando o elemento 72 (iterativa) => %d\n", 
+        	busca(vet, 10, 0, 72));
+   	printf("Procurando o elemento 12 (recursiva) => %d\n", 
+        	buscaRecursiva(vet, 10, 0, 12));
+    	printf("Procurando o elemento 72 (recursiva) => %d\n", 
+        	buscaRecursiva(vet, 10, 0, 72));
+    	return 0;
+	}
 
 
 
 #### 4) Refaça a funcionalidade de exclusão de modo a não ter que copiar todos os elementos abaixo do excluído.
 
 	Código a ser substituído:
-				int j;
-			        for(j=i+1; j<fichas_existentes; j++)
-			        {
-				    	agenda[j-1] = agenda[j];
-			        }
-			        fichas_existentes--;
-			        proxima--;
+	int j;
+	for(j=i+1; j<fichas_existentes; j++)
+	{
+	agenda[j-1] = agenda[j];
+	}
+	fichas_existentes--;
+	proxima--;
 
 
 #### 5) Refaça o procurar de modo a trabalhar mesmo com pedaços de nomes (dica: pesquise uma função chamada "strstr").
@@ -88,9 +88,9 @@ int main()
 DICA: exemplo de uso da função strstr()
 --------
 
-#include <stdio.h>
-#include <string.h>
-int main () {
+	#include <stdio.h>
+	#include <string.h>
+	int main () {
 	char texto[20] = "Joao da Silva";
 	char pedaco1[10] = "Silva";
 	char pedaco2[10] = "Santos";
@@ -110,3 +110,4 @@ int main () {
 }
 
 #### 6) Crie uma funcionalidade de alterar (Update do crud).
+<br>
