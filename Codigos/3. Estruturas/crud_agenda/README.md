@@ -2,21 +2,21 @@
 
 ## Todos estes exercícios a seguir têm por base o código-base, que é um mini CRUD (Create-Read-Update-Delete, ou Criar-Ler-Atualizar-Remover).    
     
-### 1) Inclua novos campos, como endereço, e-mail, data de nascimento, etc.    
+#### 1) Inclua novos campos, como endereço, e-mail, data de nascimento, etc.    
     
-### 2) Crie uma função procurar, com a assinatura abaixo, de modo que ela possa ser aproveitada tanto na funcionalidade procurar, quanto na excluir:    
+#### 2) Crie uma função procurar, com a assinatura abaixo, de modo que ela possa ser aproveitada tanto na funcionalidade procurar, quanto na excluir:    
     
 int procurar(char procurado[], struct ficha vetor[], int num_fichas)    
     
  	O retorno dessa função será o índice do elemento encontrado, ou -1, caso o mesmo não tenta sido localizado.    
 
-### 3) Reimplemente a função procurar de modo recursivo (particularmente não há nenhuma vantagem nesta alteração, é só para treinarmos recursividade).
+#### 3) Reimplemente a função procurar de modo recursivo (particularmente não há nenhuma vantagem nesta alteração, é só para treinarmos recursividade).
 
 	DICA: Exercício de recursividade:
 
 	Crie uma função recursiva que procure um número dentro de um vetor, a partir de um dado índice. Se achar o mesmo, o método retorna o índice onde ele se encontra, senão, retorna -1.
 
--> Só para entendermos melhor o problema, a versão iterativa (não-recursiva) seria assim:
+-> Só para entendermos melhor o problema, a versão interativa (não-recursiva) seria assim:
 
 	int busca(int vet[ ], int N, int indiceInicio, int procurado)
 	{	int i;
@@ -71,7 +71,7 @@ int main()
 
 
 
-### 4) Refaça a funcionalidade de exclusão de modo a não ter que copiar todos os elementos abaixo do excluído.
+#### 4) Refaça a funcionalidade de exclusão de modo a não ter que copiar todos os elementos abaixo do excluído.
 
 	Código a ser substituído:
 				int j;
@@ -83,7 +83,7 @@ int main()
 			        proxima--;
 
 
-### 5) Refaça o procurar de modo a trabalhar mesmo com pedaços de nomes (dica: pesquise uma função chamada "strstr").
+#### 5) Refaça o procurar de modo a trabalhar mesmo com pedaços de nomes (dica: pesquise uma função chamada "strstr").
 
 DICA: exemplo de uso da função strstr()
 --------
@@ -109,4 +109,4 @@ int main () {
 	return 0;
 }
 
-### 6) Crie uma funcionalidade de alterar (Update do crud).
+#### 6) Crie uma funcionalidade de alterar (Update do crud).
