@@ -39,34 +39,33 @@ void mostrarConteudo(struct ficha user){
     printf("\nAniversario: %s", user.aniversario);
 }
 
+void leia(char string[], int tamanho)
+{   fgets(string, tamanho, stdin);
+    string[strlen(string)-1] = '\0';
+}
+
 void minusculo(char str[])
 {   int i, tam=strlen(str);
     for(i=0; i<tam; i++)
         str[i] = tolower(str[i]);
 }
 
-int procurar(char procurado[], struct ficha nome[], int numFichas, int i){
+/* int procurar(char procurado[], struct ficha nome[], int numFichas, int i){
 	char confirmacao[20], nomeMinusculo[40];
 	
 	minusculo(procurado);
-	    
 	if (i == numFichas){
 		printf("\nNão encontrado!\n");
 		return menu;
 	}
 	
 	for(i=0; i<numFichas; i++){
-	    /*if(strcasecmp(procurado, nome[i].nome) == 0){	
-		printf("\nRegistro encontrado!\n");
-		mostrarConteudo(nome[i]);
-		return i;
-	    }*/
 	    strcpy(nomeMinusculo, nome[i].nome);
 	    minusculo(nomeMinusculo);
 	    if(strstr(nomeMinusculo, procurado) != NULL){	
 		    printf("Achei esta ficha:\nNome: %s\nTelefone: %s\n", nome[i].nome, nome[i].telefone);
             printf("É esta que procura (S/N)?");
-            gets(confirmacao);
+            leia(confirmacao, 20);
             if(confirmacao[0] == 's' || confirmacao[0] == 'S'){
                 mostrarConteudo(nome[i]);
 		        return i;
@@ -75,23 +74,40 @@ int procurar(char procurado[], struct ficha nome[], int numFichas, int i){
 		    return procurar(procurado, nome, numFichas, i+1);	
 	    }
 	}
+}*/
+
+int procurarRecursivo(char procurado[], int inicio, struct ficha nome[], int num_fichas){   char confirmacao[20], nomeMinusculo[40];
+    
+    if(inicio >= num_fichas) return -1; //base
+    //minusculo(procurado);
+	strcpy(nomeMinusculo, nome[inicio].nome); //criando uma cópia do nome
+	minusculo(nomeMinusculo); //cópia do nome em minúsculo
+	if(strstr(nomeMinusculo, procurado) != NULL)
+    {   printf("Achei esta ficha:\nNome: %s, Telefone: %s\n", nome[inicio].nome, nome[inicio].telefone);
+        printf("É esta que procura (S/N)?");
+        leia(confirmacao, 20);
+        if(confirmacao[0] == 's' || confirmacao[0] == 'S')
+            return inicio;
+    }
+	return procurarRecursivo(procurado, inicio+1, nome, num_fichas);
 }
+
 
 //retorna um novo registro para a agenda
 struct ficha get_info(){
 	struct ficha novo;
 	printf("\nEntre com o nome:"); 
-	gets(novo.nome);
+	leia(novo.nome, 60);
 	printf("Entre com o telefone:"); 
-	gets(novo.telefone);
+	leia(novo.telefone, 10);
 	printf("Entre com o endereco:");
-	gets(novo.endereco);
+	leia(novo.endereco, 50);
 	printf("Entre com o email:");
-	gets(novo.email);
+	leia(novo.email, 30);
 	printf("Entre com a idade:");
-	gets(novo.idade);
+	leia(novo.idade, 10);
 	printf("Entre com o aniversario:");
-	gets(novo.aniversario);
+	leia(novo.aniversario, 15);
 	return novo;
 }
 
@@ -104,7 +120,7 @@ int main(){
 
 	while(opcao[0] != '6'){
 		menu();
-		gets(opcao);
+		leia(opcao, 10);
         
 		//inserir novo registro
 		if(opcao[0] == '1'){		
@@ -118,8 +134,9 @@ int main(){
 			if(fichas_existentes > 0){
 				char procurado[40];
 				printf("\nEntre com o nome procurado:");
-				gets(procurado);
-				procurar(procurado, agenda, fichas_existentes, 0);
+				leia(procurado, 40);
+				minusculo(procurado);
+                int resposta = procurarRecursivo(procurado, 0, agenda, fichas_existentes);
 
 			}else printf("\nNome não encontrado!\n");
 		}
@@ -141,12 +158,12 @@ int main(){
 		if(opcao[0] == '4')	{
 			char procurado[40];
 			printf("\nEntre com o nome que sera excluído:");
-			gets(procurado);
-            int resposta = procurar(procurado, agenda, fichas_existentes, 0);
+			leia(procurado, 40);
+            int resposta = procurarRecursivo(procurado, 0, agenda, fichas_existentes);
             
-			if(resposta != -1)
-			{   printf("\n\nO nome %s e seus dados foram removidos com sucesso!\n", agenda[resposta].nome, agenda[resposta].telefone, 
-			agenda[resposta].endereco, agenda[resposta].email, agenda[resposta].idade, agenda[resposta].aniversario);
+			if(resposta != -1){   
+			    printf("\n\nO nome %s e seus dados foram removidos com sucesso!\n%s\n%s\n%s\n%s\n%s\n", agenda[resposta].nome, agenda[resposta].telefone, 
+			    agenda[resposta].endereco, agenda[resposta].email, agenda[resposta].idade, agenda[resposta].aniversario);
 				agenda[resposta] = agenda[fichas_existentes-1];
 				fichas_existentes--;
 				proxima--;
@@ -158,13 +175,12 @@ int main(){
 		//atualizar registro
 		if(opcao[0] == '5'){
 			if(fichas_existentes > 0){
-				char atualizado[40];
-				int registro;
-
+				char procurado[40];
 				printf("\nEntre com o nome que sera atualizado:");
-				gets(atualizado);
-				registro = procurar(atualizado, agenda, fichas_existentes, 0);
-				agenda[registro] = get_info();
+				leia(procurado, 40);
+				minusculo(procurado);
+				int resposta = procurarRecursivo(procurado, 0, agenda, fichas_existentes);
+				agenda[resposta] = get_info();
 
 			}else printf("\nNome não encontrado!\n");
 		}
